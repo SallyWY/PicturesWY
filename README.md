@@ -1,2 +1,4 @@
-# PicturesWY
-Pictures for Markdown
+# StudyRecordWY
+## 20190311Miniconda3
+## 20190311JupyterNotebook
+## 20190311GitUserGuide
