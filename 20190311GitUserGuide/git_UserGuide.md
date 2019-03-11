@@ -132,9 +132,13 @@ repository搞乱了
 
 先进入到github网页版中，在commit内找到所希望的版本
 
+![](https://github.com/SallyWY/PicturesWY/raw/master/20190311GitUserGuide/Screen%20Shot%202019-03-12%20at%2012.24.32%20AM.png)
+
 点击最右边的<>左边的号码，也就是 “9d9f4a7”
 
 然后复制commit 后面的一长串数字/字母（commit id）
+
+![](https://github.com/SallyWY/PicturesWY/raw/master/20190311GitUserGuide/Screen%20Shot%202019-03-12%20at%2012.26.27%20AM.png)
 
 使用git push发现不可以
 
@@ -197,4 +201,52 @@ Add files via upload
 ```
 
 这证明 每次commit的-m还是要写的 方便查看commit版本
+
+
+
+## 20190311 流畅实现git push
+
+```
+wangyudeMacBook-Pro:Desktop wangyu$ cd PicturesWY
+wangyudeMacBook-Pro:PicturesWY wangyu$ ls
+20190311GitUserGuide	20190311Miniconda3
+20190311JupyterNotebook	README.md
+
+wangyudeMacBook-Pro:PicturesWY wangyu$ git add 20190311GitUserGuide
+wangyudeMacBook-Pro:PicturesWY wangyu$ git commit 20190311GitUserGuide -m "Git User Guide"
+[master 3857279] Git User Guide
+ Committer: Yu Wang <wangyu@wangyudeMacBook-Pro.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 3 files changed, 200 insertions(+)
+ create mode 100644 20190311GitUserGuide/Screen Shot 2019-03-12 at 12.24.32 AM.png
+ create mode 100644 20190311GitUserGuide/Screen Shot 2019-03-12 at 12.26.27 AM.png
+ create mode 100644 "20190311GitUserGuide/git\344\275\277\347\224\250\346\211\213\345\206\214.md"
+
+wangyudeMacBook-Pro:PicturesWY wangyu$ git branch -v
+* master 3857279 [ahead 1] Git User Guide
+wangyudeMacBook-Pro:PicturesWY wangyu$ git branch -a
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+wangyudeMacBook-Pro:PicturesWY wangyu$ git push origin master
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 152.61 KiB | 25.43 MiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/SallyWY/PicturesWY.git
+   9d9f4a7..3857279  master -> master
+```
 
